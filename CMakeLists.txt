@@ -1,7 +1,7 @@
 project(clew)
 
 option( BUILD_TESTS "Build test program." ON )
-option( BUILD_SHARED_LIBRARY "Shared library, rather than static library." OFF )
+option( CLEW_BUILD_SHARED_LIBRARY "Shared library, rather than static library." OFF )
 option( INSTALL_CL_HEADER "Install cl.h / opencl.h  proxy headers to ease compilation of software not aware of CLEW" OFF )
 
 cmake_minimum_required (VERSION 2.6)
@@ -25,7 +25,7 @@ if(CMAKE_COMPILER_IS_GNUCC)
 endif()
 
 add_definitions(-DCL_USE_DEPRECATED_OPENCL_1_1_APIS)
-if( NOT BUILD_SHARED_LIBRARY )
+if( NOT CLEW_BUILD_SHARED_LIBRARY )
   add_definitions(-Dclew_STATIC)
 endif()
 

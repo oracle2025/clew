@@ -1338,6 +1338,9 @@ typedef cl_uint             cl_program_build_info;
 typedef cl_int              cl_build_status;
 typedef cl_uint             cl_kernel_info;
 typedef cl_uint             cl_kernel_arg_info;
+typedef cl_uint             cl_kernel_arg_address_qualifier;
+typedef cl_uint             cl_kernel_arg_access_qualifier;
+typedef cl_bitfield         cl_kernel_arg_type_qualifier;
 typedef cl_uint             cl_kernel_work_group_info;
 typedef cl_uint             cl_event_info;
 typedef cl_uint             cl_command_type;
@@ -2839,7 +2842,7 @@ CLEW_FUN_EXPORT     PFNCLUNLOADPLATFORMCOMPILER         __clewUnloadPlatformComp
 #define	clCreateFromGLTexture           CLEW_GET_FUN(__clewCreateFromGLTexture           )
 #define	clCreateFromGLRenderbuffer      CLEW_GET_FUN(__clewCreateFromGLRenderbuffer      )
 #define	clGetGLObjectInfo               CLEW_GET_FUN(__clewGetGLObjectInfo               )
-#define	clGetGLTextureInfo              CLEW_GET_FUN(__clGetGLTextureInfo                )
+#define	clGetGLTextureInfo              CLEW_GET_FUN(__clewGetGLTextureInfo                )
 #define	clEnqueueAcquireGLObjects       CLEW_GET_FUN(__clewEnqueueAcquireGLObjects       )
 #define	clEnqueueReleaseGLObjects       CLEW_GET_FUN(__clewEnqueueReleaseGLObjects       )
 #ifdef CL_USE_DEPRECATED_OPENCL_1_1_APIS

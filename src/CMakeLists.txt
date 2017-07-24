@@ -2,10 +2,10 @@ SET(MAJOR_VERSION 1)
 SET(MINOR_VERSION 0)
 SET(MICRO_VERSION 0)
 
-if( BUILD_SHARED_LIBRARY )
+if( CLEW_BUILD_SHARED_LIBRARY )
   add_library( clew SHARED clew.c )
 else()
-  add_library( clew clew.c )
+	add_library( clew STATIC clew.c )
 endif()
 
 set_target_properties(clew
@@ -20,7 +20,7 @@ if(UNIX)
 target_link_libraries( clew dl )
 endif(UNIX)
 
-install(TARGETS clew 
-	LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}
-	ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}
-	RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
+#install(TARGETS clew 
+	#LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}
+	#ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib${LIB_SUFFIX}
+       # RUNTIME DESTINATION ${CMAKE_INSTALL_PREFIX}/bin)
